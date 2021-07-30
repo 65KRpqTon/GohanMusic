@@ -40,12 +40,9 @@ async def start(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/{OWNER}"),
+                        " 🧑🏻‍💻 DEVELOPER ", url=f"https://t.me/{OWNER}"),
                     InlineKeyboardButton(
-                        "sᴜᴘᴘᴏʀᴛ 💬", url=f"https://t.me/{SUPPORT_GROUP}")
-                  ],[
-                    InlineKeyboardButton(
-                         "🛠 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 🛠", url="https://github.com/Good-Boys-Exe/GohanMusic")
+                        " SUPPORT GROUP 💬 ", url=f"https://t.me/{SUPPORT_GROUP}")
 
                 ]
             ]
@@ -56,10 +53,10 @@ async def start(client: Client, message: Message):
 @Client.on_message(command(["ping", f"ping@{BOT_USERNAME}"]) & ~filters.edited)
 async def ping_pong(client: Client, m: Message):
     start = time()
-    m_reply = await m.reply_text("Pinging...")
+    m_reply = await m.reply_text("Sabar ya kontol..")
     delta_ping = time() - start
     await m_reply.edit_text(
-        f"{emoji.PING_PONG} **PONG!!**\n"
+        f"{emoji.PING_PONG} **KONTOL**\n"
         f"`{delta_ping * 1000:.3f} ms`"
     )
 
@@ -71,7 +68,7 @@ async def get_uptime(client: Client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m.reply_text(
-        f"{emoji.ROBOT} Saya Masih Aktif\n"
-        f"• **Waktu aktif:** `{uptime}`\n"
-        f"• **Waktu mulai:** `{START_TIME_ISO}`"
+        f"{emoji.ROBOT} BOT ACTIVE TIME\n"
+        f"• **TIME ON:** `{uptime}`\n"
+        f"• **TIME START:** `{START_TIME_ISO}`"
     )
